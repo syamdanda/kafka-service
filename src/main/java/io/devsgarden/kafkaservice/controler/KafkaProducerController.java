@@ -18,7 +18,7 @@ public class KafkaProducerController {
 	@Autowired
 	private KafkaSender sender;
 	
-	@PostMapping
+	@PostMapping("/sendMsg")
 	public ResponseEntity<String> sendData(@RequestBody Student student){
 		sender.sendData(student);
 		return new ResponseEntity<String>("Data sent to Kafka", HttpStatus.OK);
